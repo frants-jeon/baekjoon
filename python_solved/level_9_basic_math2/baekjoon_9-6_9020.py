@@ -28,17 +28,17 @@ def get_primes(m, n):
         if len(numbers) - 1 == i: break
     return prime_number
 
-prime_number = sorted(get_primes(0, 10000))
+prime_number = sorted(get_primes(0, 10000), reverse=True)
 
 for i in num:
     if is_prime(i // 2):
         print(i // 2, i // 2)
     else:
         for j in prime_number:
-            if j > i // 2:
-                big_prime = j
-                small_prime = i - big_prime
-                if is_prime(small_prime):
+            if j < i // 2:
+                small_prime = j
+                big_prime = i - small_prime
+                if is_prime(big_prime):
                     print(small_prime, big_prime)
                     break
         
