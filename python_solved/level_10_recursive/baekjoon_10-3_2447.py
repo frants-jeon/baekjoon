@@ -1,5 +1,10 @@
 N = int(input())
-l = [[' '] * N for _ in range(N)]
+l = []
+for _ in range(N):
+    line = []
+    l.append(line)
+    for _ in range(N):
+        line.append(' ')
 
 
 # 별 찍는 재귀 함수
