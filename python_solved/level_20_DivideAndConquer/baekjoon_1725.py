@@ -19,49 +19,31 @@ def histogram(arr):
     max_area = width * height
     while width < size:
         # 제일 왼쪽까지 갔을 때
+        width += 1
         if pointer[left] == 0:
-            width += 1
             # 오른쪽 높이가 더 낮을 때
             if arr[pointer[right] + 1] < height:
                 height = arr[pointer[right] + 1]
-                pointer[right] += 1
-            else:
-                pointer[right] += 1
-            if height * width > max_area and height * width <= 2000000000:
-                max_area = height * width
+            pointer[right] += 1
         # 제일 오른쪽까지 갔을 때
         elif pointer[right] == size - 1:
-            width += 1
             # 왼쪽 높이가 더 낮을 때
             if arr[pointer[left] - 1] < height:
                 height = arr[pointer[left] - 1]
-                pointer[left] -= 1
-            else:
-                pointer[left] -= 1
-            if height * width > max_area and height * width <= 2000000000:
-                max_area = height * width
+            pointer[left] -= 1
         # 왼쪽이 더 크거나 같을 때
         elif arr[pointer[left] - 1] >= arr[pointer[right] + 1]:
-            width += 1
             # 왼쪽 높이가 더 낮을 때
             if arr[pointer[left] - 1] < height:
                 height = arr[pointer[left] - 1]
-                pointer[left] -= 1
-            else:
-                pointer[left] -= 1
-            if height * width > max_area and height * width <= 2000000000:
-                max_area = height * width
+            pointer[left] -= 1
         # 오른쪽이 더 클 때
         else:
-            width += 1
             # 오른쪽 높이가 더 낮을 때
             if arr[pointer[right] + 1] < height:
                 height = arr[pointer[right] + 1]
-                pointer[right] += 1
-            else:
-                pointer[right] += 1
-            if height * width > max_area and height * width <= 2000000000:
-                max_area = height * width
+            pointer[right] += 1
+        max_area = max(max_area, height * width)
     left_max = histogram(arr[:divider_idx])
     right_max = histogram(arr[divider_idx:])
     answer = max(max_area, left_max, right_max)
