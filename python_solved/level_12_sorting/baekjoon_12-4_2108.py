@@ -1,3 +1,4 @@
+##### 통계학 #####
 import sys
 
 N = int(sys.stdin.readline())

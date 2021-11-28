@@ -1,3 +1,4 @@
+##### 소트인사이드 #####
 N = input()
 n_list = []
 for i in range(len(N)):

@@ -1,3 +1,4 @@
+##### 색종이 만들기 #####
 import sys
 
 N = int(input())
@@ -22,8 +23,6 @@ def div_paper(n, l: list):
         cnt_0 += 1
         return
     
-    # for i in range(1, 5):
-    #     globals()[f'quadrant_{i}'] = []
     quadrant_1 = []
     quadrant_2 = []
     quadrant_3 = []

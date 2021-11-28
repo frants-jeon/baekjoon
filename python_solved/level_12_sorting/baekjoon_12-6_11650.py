@@ -1,3 +1,4 @@
+##### 좌표 정렬하기 #####
 N = int(input())
 li = []
 for _ in range(N):

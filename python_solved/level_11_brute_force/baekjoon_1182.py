@@ -1,13 +1,25 @@
-N, S = map(int,input().split())
-l = list(map(int,input().split()))
-pick = [False] * N
+from itertools import combinations
 
-total = 0
-def partial_sequence(sequence, true_cnt, n, boolean):
-    sum_sequence = 0
-    if true_cnt == n:
+N, S = map(int,input().split())
+li = list(map(int,input().split()))
+
+# cnt, num_pick = 0, 1
+# while num_pick <= N:
+#     for com in combinations(li, num_pick):
+#         if sum(com) == S:
+#             cnt += 1
+#     num_pick += 1
+
+# print(cnt)
+cnt = 0
+def backtracking(current, suum):
+    global cnt
+    if current == N:
         return
-    for i in range(n):
-        if not boolean[i]:
-            boolean[i] = True
-        sum_sequence += sequence[i]
+    if suum + li[current] == S:
+        cnt += 1
+    backtracking(current + 1, suum)
+    backtracking(current + 1, suum + li[current])
+
+backtracking(0, 0)
+print(cnt)

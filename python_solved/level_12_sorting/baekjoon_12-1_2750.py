@@ -1,3 +1,4 @@
+##### 수 정렬하기 #####
 N = int(input())
 l = []
 for _ in range(N):
