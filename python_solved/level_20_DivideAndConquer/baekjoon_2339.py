@@ -49,7 +49,7 @@ def divide_plate(arr):
         
     else:
         arr = list(zip(*(arr)))
-        # size = len(arr)
+        size = len(arr)
         for i in range(len(arr)):
             line = arr[i]
             if 2 not in line and 1 in line:
