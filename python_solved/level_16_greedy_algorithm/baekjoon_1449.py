@@ -1,3 +1,4 @@
+##### 수리공 항승 #####
 from sys import stdin
 
 N, L = map(int,stdin.readline().split())
