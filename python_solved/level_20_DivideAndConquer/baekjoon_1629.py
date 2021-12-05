@@ -4,7 +4,7 @@ from sys import stdin
 A, B, C = map(int,stdin.readline().split())
 def my_pow(base, exp):
     if exp == 1:
-        return base
+        return base % C
     if exp % 2 == 0:
         return (my_pow(base, exp // 2) ** 2) % C
     else:
