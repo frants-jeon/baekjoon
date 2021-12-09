@@ -1,3 +1,4 @@
+##### 인공지능 시계 #####
 hour, minute, second = map(int,input().split())
 D = int(input())
 
