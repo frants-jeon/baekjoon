@@ -15,9 +15,8 @@ def chess_move(k_pos, s_pos, M):
   for i in range(N):
     m_idx = direction.index(move[i])
     tmp = [0, 0]
-    if ((dx[m_idx] < 0 and k_row > 0) or (dx[m_idx] > 0 and k_row < 7) and \
-      (dy[m_idx] < 0 and k_column > 0) or (dy[m_idx] > 0 and k_column < 7)) \
-        or dx[m_idx] == 0 or dy[m_idx] == 0:
+    if ((dx[m_idx] < 0 and k_row > 0) or (dx[m_idx] > 0 and k_row < 7) or dx[m_idx] == 0) and \
+      ((dy[m_idx] < 0 and k_column > 0) or (dy[m_idx] > 0 and k_column < 7) or dy[m_idx] == 0):
       k_row += dx[m_idx]
       k_column += dy[m_idx]
     else: continue
