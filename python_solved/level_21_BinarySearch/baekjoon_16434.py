@@ -3,7 +3,7 @@ from sys import stdin
 input = stdin.readline
 N, atk = map(int,input().split())
 rooms = [list(map(int,input().split())) for _ in range(N)]
-low, high = 0, pow(1000000, 2) * 123456
+low, high = 0, pow(1000000, 2) * N
 while low + 1 < high:
   current_atk = atk
   middle = (low + high) // 2
