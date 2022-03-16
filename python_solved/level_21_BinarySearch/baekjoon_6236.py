@@ -20,11 +20,10 @@ while low + 1 < high:
     else: # 추가로 출금해야 한다면 인출횟수 늘리고 현재잔액 갱신
       current_money = middle - days[i]
       cnt += 1
-  # 사이즈 줄여야하지 않으면 low값 갱신
+  # 사이즈 줄여야하지 않거나 인출횟수가 초과했다면 low값 갱신(인출금액 상향)
   if sizeDown == 0 or cnt > M:
     low = middle
-  # 사이즈 줄여야하고 인출횟수가 적으면 high값 갱신
-  else:
+  else: # 그 외의 경우는 high값 갱신(인출금액 하향)
     high = middle
 
 print(high)
